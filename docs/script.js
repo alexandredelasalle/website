@@ -70,9 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!hasHover) return false;
 
         const cursors = [
-            "../img/zapdos.png",
-            "../img/rayquaza.png",
-            "../img/slowbro.png"
+            "img/zapdos.png",
+            "img/rayquaza.png",
+            "img/slowbro.png"
         ];
 
         pokeMode = (pokeMode + 1) % cursors.length;
@@ -124,8 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const sources = [
-            "../img/pikmin_img01.png",
-            "../img/zelda_img01.png"
+            "img/pikmin_img01.png",
+            "img/zelda_img01.png"
         ];
 
         const src = sources[Math.floor(Math.random() * sources.length)];
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function screensaverEffect() {
 
         const img = document.createElement("img");
-        img.src = "../img/tennis.png";
+        img.src = "img/tennis.png";
 
         img.style.position = "fixed";
         img.style.pointerEvents = "none";
