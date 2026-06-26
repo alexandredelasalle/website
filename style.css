@@ -1,0 +1,262 @@
+body {
+    font-family: serif;
+    margin: 0;
+    padding: 8px;
+    font-size: 16px;
+    line-height: 1.1;
+    color: #000;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    margin: 0;
+}
+
+/* ---------------- */
+/* IMAGES */
+/* ---------------- */
+
+.image-link {
+    display: inline-block;
+    vertical-align: middle;
+    /*margin-right: 4px;*/
+    margin-top: 4px;
+    /*margin-bottom: 13px;*/
+}
+
+.image-src {
+    display: inline-block;
+    vertical-align: middle;
+    /*margin-right: 4px;*/
+    margin-top: 4px;
+    /*margin-bottom: 13px;*/
+}
+
+.image-landscape {
+    max-height: 480px;
+    max-width: 95vw;
+}
+
+.image-portrait {
+    max-width: 480px;
+    max-height: 95vw;
+}
+
+.rotate-img {
+    transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------------- */
+/* LINKS BASE STATE */
+/* ---------------- */
+
+.link-internal {
+    color: silver;
+    text-decoration: underline;
+    text-underline-offset: 1.5px;
+}
+
+.link-external {
+    color: silver;
+    text-decoration: none;
+}
+
+.btn {
+    color: silver;
+    text-decoration: underline;
+    text-underline-offset: 1.5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.email {
+    color: silver;
+    cursor: pointer;
+}
+
+.disabled-link {
+    cursor: not-allowed;
+}
+
+/* ---------------- */
+/* HOVER (DESKTOP ONLY) */
+/* ---------------- */
+
+@media (hover: hover) {
+
+    .link-internal:hover {
+        color: hotpink;
+    }
+
+    .link-external:hover {
+        color: rgb(0, 200, 0);
+        text-decoration: underline;
+    }
+
+    .btn:hover {
+        color: dodgerblue;
+        text-decoration: underline;
+    }
+
+    .disabled-link:hover {
+        color: darkorange;
+    }
+
+    .image-link:hover img {
+        outline: 1.7px solid hotpink;
+        outline-offset: -1.5px;
+    }
+
+    .image-src:hover img {
+        outline: 1.7px solid rgb(0, 200, 0);
+        outline-offset: -1.5px;
+    }
+}
+
+/* ---------------- */
+/* MOBILE / NO HOVER */
+/* ---------------- */
+
+@media (hover: none) {
+
+    .link-internal {
+        color: hotpink;
+        text-decoration: none;
+    }
+
+    .link-external {
+        color: rgb(0, 200, 0);
+        text-decoration: none;
+    }
+
+    .btn {
+        color: dodgerblue;
+        text-decoration: none;
+    }
+
+    .disabled-link {
+        color: darkorange;
+        text-decoration: none;
+    }
+}
+
+/* ---------------- */
+/* COLOR MODE (JS TOGGLE) */
+/* ---------------- */
+
+.color-mode .link-internal {
+    color: hotpink;
+    text-decoration: none;
+}
+
+.color-mode .link-external {
+    color: rgb(0, 200, 0);
+    text-decoration: none;
+}
+
+.color-mode .btn {
+    color: dodgerblue;
+    text-decoration: none;
+}
+
+.color-mode .disabled-link {
+    color: darkorange;
+    text-decoration: none;
+}
+
+/* hover in color mode = highlight */
+@media (hover: hover) {
+
+    .color-mode .link-internal:hover {
+        background-color: hotpink;
+        color: white;
+    }
+
+    .color-mode .link-external:hover {
+        background-color: rgb(0, 200, 0);
+        color: white;
+    }
+
+    .color-mode .btn:hover {
+        background-color: dodgerblue;
+        color: white;
+    }
+
+    .color-mode .disabled-link:hover {
+        background-color: darkorange;
+        color: white;
+    }
+}
+
+/* ---------------- */
+/* COPIED STATE (EMAIL/PHONE) */
+/* ---------------- */
+
+.copied {
+    color: dodgerblue !important;
+    text-decoration: underline;
+}
+
+/* ---------------- */
+/* WALLPAPER SYSTEM */
+/* ---------------- */
+
+.wallpaper-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none; /* still not clickable */
+    z-index: 9999; /* above EVERYTHING */
+}
+
+.wallpaper-img {
+    position: absolute;
+    width: auto;   /* important: keeps original size */
+    height: auto;  /* important: keeps original size */
+    max-width: none;
+    max-height: none;
+}
+
+/* ---------------- */
+/* SMALL SCREEN ADJUSTMENT */
+/* ---------------- */
+
+@media (max-width: 700px) {
+
+    body {
+        font-size: 16px;
+    }
+
+    .image-link {
+        display: block;
+        text-align: center;
+        margin-right: 0px;
+    }
+
+    .image-link + br + br {
+        display: none;
+    }
+
+    .image-link + br:has(+ .image-src) {
+    display: none;
+}
+
+    .image-src {
+        display: block;
+        text-align: center;
+        margin-right: 0px;
+    }
+
+    .image-src + br + br {
+        display: none;
+    }
+
+    .image-src + br:has(+ .image-src) {
+    display: none;
+}
+
+    
+}
+
